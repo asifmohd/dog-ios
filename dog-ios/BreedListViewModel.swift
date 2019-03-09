@@ -9,9 +9,15 @@
 import Foundation
 import Moya
 
+protocol BreedListViewModelDelegate: class {
+    func dataLoaded()
+}
+
 class BreedListViewModel {
-    let provider = MoyaProvider<DogService>()
-    var allBreeds: BreedsResponse?
+    private let provider = MoyaProvider<DogService>()
+    var breedList: [String] = []
+    var breedMap: [String: [String]] = [:]
+    weak var delegate: BreedListViewModelDelegate?
 
     func makeAPICall() {
         DispatchQueue.global(qos: .background).async { [weak self] in
@@ -23,7 +29,8 @@ class BreedListViewModel {
                     do {
                         _ = try moyaResponse.filterSuccessfulStatusAndRedirectCodes()
                         let breedsResponse = try decoder.decode(BreedsResponse.self, from: data)
-                        self?.allBreeds = breedsResponse
+                        self?.constructDataSource(response: breedsResponse.message)
+                        self?.delegate?.dataLoaded()
                     } catch let error {
                         print(error)
                     }
@@ -32,5 +39,10 @@ class BreedListViewModel {
                 }
             }
         }
+    }
+
+    func constructDataSource(response: [String: [String]]) {
+        self.breedList = response.keys.sorted()
+        self.breedMap = response
     }
 }
