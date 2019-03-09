@@ -14,6 +14,8 @@
 		E0E046472233EB70002013C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E046462233EB70002013C1 /* Assets.xcassets */; };
 		E0E0464A2233EB70002013C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E046482233EB70002013C1 /* LaunchScreen.storyboard */; };
 		E0E046552233EB70002013C1 /* dog_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E046542233EB70002013C1 /* dog_iosTests.swift */; };
+		E0E046602233F029002013C1 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E0465F2233F029002013C1 /* DogService.swift */; };
+		E0E046622233F209002013C1 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E046612233F209002013C1 /* Breed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		E0E046502233EB70002013C1 /* dog-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dog-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E046542233EB70002013C1 /* dog_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dog_iosTests.swift; sourceTree = "<group>"; };
 		E0E046562233EB70002013C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E0465F2233F029002013C1 /* DogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
+		E0E046612233F209002013C1 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,6 @@
 				2D5A64D6C85BC5E1AC6802BC /* Pods-dog-ios.debug.xcconfig */,
 				62E98EAD46297C9EFB225D85 /* Pods-dog-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,6 +103,8 @@
 				E0E046462233EB70002013C1 /* Assets.xcassets */,
 				E0E046482233EB70002013C1 /* LaunchScreen.storyboard */,
 				E0E0464B2233EB70002013C1 /* Info.plist */,
+				E0E0465F2233F029002013C1 /* DogService.swift */,
+				E0E046612233F209002013C1 /* Breed.swift */,
 			);
 			path = "dog-ios";
 			sourceTree = "<group>";
@@ -248,8 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E046622233F209002013C1 /* Breed.swift in Sources */,
 				E0E046422233EB6F002013C1 /* ViewController.swift in Sources */,
 				E0E046402233EB6F002013C1 /* AppDelegate.swift in Sources */,
+				E0E046602233F029002013C1 /* DogService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
