@@ -21,6 +21,27 @@ class BreedListViewController: UIViewController {
         self.vm.delegate = self
         self.vm.makeAPICall()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        guard let selectedRowIndexPath = self.breedListTableView.indexPathForSelectedRow else {
+            return
+        }
+        self.breedListTableView.deselectRow(at: selectedRowIndexPath, animated: true)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? SubBreedListViewController,
+            let currentSelectedIndexPath = self.breedListTableView.indexPathForSelectedRow else {
+            return
+        }
+        let breed = self.vm.breedList[currentSelectedIndexPath.row]
+        guard let subBreeds = self.vm.breedMap[breed] else {
+            return
+        }
+        vc.vm = SubBreedListViewModel(breedList: subBreeds)
+    }
 }
 
 extension BreedListViewController: UITableViewDataSource {
@@ -32,6 +53,20 @@ extension BreedListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: BreedListTableViewCell.ReuseIdentifier, for: indexPath) as! BreedListTableViewCell
         cell.breedNameLabel.text = self.vm.breedList[indexPath.row]
         return cell
+    }
+}
+
+extension BreedListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let breed = self.vm.breedList[indexPath.row]
+        guard let subBreeds = self.vm.breedMap[breed] else {
+            return
+        }
+        if subBreeds.count > 0 {
+            self.performSegue(withIdentifier: "showSubBreedList", sender: nil)
+        } else {
+            // show images VC
+        }
     }
 }
 

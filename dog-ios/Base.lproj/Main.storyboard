@@ -39,11 +39,47 @@
                     <navigationItem key="navigationItem" title="Dogs" id="P5Z-5u-dG9"/>
                     <connections>
                         <outlet property="breedListTableView" destination="vb1-r8-F66" id="7hN-nn-IN2"/>
+                        <segue destination="Ct1-II-rTg" kind="show" identifier="showSubBreedList" id="5Kl-lU-2Qk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="79.610194902548727"/>
+        </scene>
+        <!--Sub Breeds-->
+        <scene sceneID="1E9-lu-lvy">
+            <objects>
+                <viewController id="Ct1-II-rTg" customClass="SubBreedListViewController" customModule="dog_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TkX-RU-yEm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gqf-5Y-xCU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ct1-II-rTg" id="hIS-p6-lqB"/>
+                                    <outlet property="delegate" destination="Ct1-II-rTg" id="u4b-lU-6rI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gqf-5Y-xCU" firstAttribute="leading" secondItem="m8d-Eb-Vob" secondAttribute="leading" id="3o2-I5-sOp"/>
+                            <constraint firstItem="m8d-Eb-Vob" firstAttribute="trailing" secondItem="Gqf-5Y-xCU" secondAttribute="trailing" id="DTf-37-OgF"/>
+                            <constraint firstItem="m8d-Eb-Vob" firstAttribute="bottom" secondItem="Gqf-5Y-xCU" secondAttribute="bottom" id="ZFa-e7-ZRb"/>
+                            <constraint firstItem="Gqf-5Y-xCU" firstAttribute="top" secondItem="m8d-Eb-Vob" secondAttribute="top" id="jsQ-Kc-bKE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m8d-Eb-Vob"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sub Breeds" id="3W5-tu-Ujh"/>
+                    <connections>
+                        <outlet property="subBreedTableView" destination="Gqf-5Y-xCU" id="fpt-Lm-IcP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x0L-oJ-fKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vvc-rZ-6Wt">

@@ -16,6 +16,8 @@
 		E0E046552233EB70002013C1 /* dog_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E046542233EB70002013C1 /* dog_iosTests.swift */; };
 		E0E046602233F029002013C1 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E0465F2233F029002013C1 /* DogService.swift */; };
 		E0E046622233F209002013C1 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E046612233F209002013C1 /* Breed.swift */; };
+		E0E3C9BB2234D97800E0CD44 /* SubBreedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3C9BA2234D97800E0CD44 /* SubBreedListViewController.swift */; };
+		E0E3C9BD2234D9B600E0CD44 /* SubBreedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3C9BC2234D9B600E0CD44 /* SubBreedListViewModel.swift */; };
 		E0F65742223424900067B02D /* BreedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F65741223424900067B02D /* BreedListViewModel.swift */; };
 		E0F65745223428D10067B02D /* BreedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F65743223428D10067B02D /* BreedListTableViewCell.swift */; };
 		E0F65746223428D10067B02D /* BreedListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F65744223428D10067B02D /* BreedListTableViewCell.xib */; };
@@ -47,6 +49,8 @@
 		E0E046562233EB70002013C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0E0465F2233F029002013C1 /* DogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
 		E0E046612233F209002013C1 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		E0E3C9BA2234D97800E0CD44 /* SubBreedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubBreedListViewController.swift; sourceTree = "<group>"; };
+		E0E3C9BC2234D9B600E0CD44 /* SubBreedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubBreedListViewModel.swift; sourceTree = "<group>"; };
 		E0F65741223424900067B02D /* BreedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewModel.swift; sourceTree = "<group>"; };
 		E0F65743223428D10067B02D /* BreedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListTableViewCell.swift; sourceTree = "<group>"; };
 		E0F65744223428D10067B02D /* BreedListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedListTableViewCell.xib; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			children = (
 				E0E0463F2233EB6F002013C1 /* AppDelegate.swift */,
 				E0E046412233EB6F002013C1 /* BreedListViewController.swift */,
+				E0E3C9BA2234D97800E0CD44 /* SubBreedListViewController.swift */,
+				E0E3C9BC2234D9B600E0CD44 /* SubBreedListViewModel.swift */,
 				E0F65741223424900067B02D /* BreedListViewModel.swift */,
 				E0F65743223428D10067B02D /* BreedListTableViewCell.swift */,
 				E0F65744223428D10067B02D /* BreedListTableViewCell.xib */,
@@ -264,6 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0F65745223428D10067B02D /* BreedListTableViewCell.swift in Sources */,
+				E0E3C9BB2234D97800E0CD44 /* SubBreedListViewController.swift in Sources */,
+				E0E3C9BD2234D9B600E0CD44 /* SubBreedListViewModel.swift in Sources */,
 				E0E046622233F209002013C1 /* Breed.swift in Sources */,
 				E0E046422233EB6F002013C1 /* BreedListViewController.swift in Sources */,
 				E0E046402233EB6F002013C1 /* AppDelegate.swift in Sources */,
