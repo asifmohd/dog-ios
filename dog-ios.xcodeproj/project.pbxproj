@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6943BD43B357C79A3EE551F /* libPods-dog-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 878996C81DB7AE324026A95D /* libPods-dog-ios.a */; };
+		82BD16CE15D9D1405993810E /* Pods_dog_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41EA285F00C622F4111CAB3 /* Pods_dog_ios.framework */; };
 		E0E046402233EB6F002013C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E0463F2233EB6F002013C1 /* AppDelegate.swift */; };
 		E0E046422233EB6F002013C1 /* BreedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E046412233EB6F002013C1 /* BreedListViewController.swift */; };
 		E0E046452233EB6F002013C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E046432233EB6F002013C1 /* Main.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		2D5A64D6C85BC5E1AC6802BC /* Pods-dog-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dog-ios.debug.xcconfig"; path = "Target Support Files/Pods-dog-ios/Pods-dog-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		62E98EAD46297C9EFB225D85 /* Pods-dog-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dog-ios.release.xcconfig"; path = "Target Support Files/Pods-dog-ios/Pods-dog-ios.release.xcconfig"; sourceTree = "<group>"; };
-		878996C81DB7AE324026A95D /* libPods-dog-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dog-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41EA285F00C622F4111CAB3 /* Pods_dog_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dog_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E0463C2233EB6F002013C1 /* dog-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dog-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E0463F2233EB6F002013C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E046412233EB6F002013C1 /* BreedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6943BD43B357C79A3EE551F /* libPods-dog-ios.a in Frameworks */,
+				82BD16CE15D9D1405993810E /* Pods_dog_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,9 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				E0E0463F2233EB6F002013C1 /* AppDelegate.swift */,
-				E0E046412233EB6F002013C1 /* BreedListViewController.swift */,
 				E0E3C9BA2234D97800E0CD44 /* SubBreedListViewController.swift */,
 				E0E3C9BC2234D9B600E0CD44 /* SubBreedListViewModel.swift */,
+				E0E046412233EB6F002013C1 /* BreedListViewController.swift */,
 				E0F65741223424900067B02D /* BreedListViewModel.swift */,
 				E0F65743223428D10067B02D /* BreedListTableViewCell.swift */,
 				E0F65744223428D10067B02D /* BreedListTableViewCell.xib */,
@@ -136,7 +136,7 @@
 		E4FD6E427DCF0114B5F945AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				878996C81DB7AE324026A95D /* libPods-dog-ios.a */,
+				A41EA285F00C622F4111CAB3 /* Pods_dog_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +152,7 @@
 				E0E046382233EB6F002013C1 /* Sources */,
 				E0E046392233EB6F002013C1 /* Frameworks */,
 				E0E0463A2233EB6F002013C1 /* Resources */,
+				26394626B57B2C64CCFCD470 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +241,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		26394626B57B2C64CCFCD470 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dog-ios/Pods-dog-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dog-ios/Pods-dog-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6B18E53D51E09756B8A65AF2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -37,10 +37,7 @@ class BreedListViewController: UIViewController {
             return
         }
         let breed = self.vm.breedList[currentSelectedIndexPath.row]
-        guard let subBreeds = self.vm.breedMap[breed] else {
-            return
-        }
-        vc.vm = SubBreedListViewModel(breedList: subBreeds)
+        vc.vm = SubBreedListViewModel(breedList: breed.subBreeds.map({$0}))
     }
 }
 
@@ -51,7 +48,7 @@ extension BreedListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BreedListTableViewCell.ReuseIdentifier, for: indexPath) as! BreedListTableViewCell
-        cell.breedNameLabel.text = self.vm.breedList[indexPath.row]
+        cell.breedNameLabel.text = self.vm.breedList[indexPath.row].name
         return cell
     }
 }
@@ -59,10 +56,7 @@ extension BreedListViewController: UITableViewDataSource {
 extension BreedListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let breed = self.vm.breedList[indexPath.row]
-        guard let subBreeds = self.vm.breedMap[breed] else {
-            return
-        }
-        if subBreeds.count > 0 {
+        if breed.subBreeds.count > 0 {
             self.performSegue(withIdentifier: "showSubBreedList", sender: nil)
         } else {
             // show images VC

@@ -8,6 +8,7 @@
 
 import Foundation
 import Moya
+import RealmSwift
 
 protocol BreedListViewModelDelegate: class {
     func dataLoaded()
@@ -15,8 +16,7 @@ protocol BreedListViewModelDelegate: class {
 
 class BreedListViewModel {
     private let provider = MoyaProvider<DogService>()
-    var breedList: [String] = []
-    var breedMap: [String: [String]] = [:]
+    var breedList: [Breed] = []
     weak var delegate: BreedListViewModelDelegate?
 
     func makeAPICall() {
@@ -29,7 +29,19 @@ class BreedListViewModel {
                     do {
                         _ = try moyaResponse.filterSuccessfulStatusAndRedirectCodes()
                         let breedsResponse = try decoder.decode(BreedsResponse.self, from: data)
-                        self?.constructDataSource(response: breedsResponse.message)
+                        let realm = try Realm()
+                        for breed in breedsResponse.message.keys.sorted() {
+                            if realm.objects(Breed.self).filter("name == %@", breed).first != nil {
+                                continue
+                            }
+                            let breedObj = Breed()
+                            breedObj.name = breed
+                            breedObj.subBreeds.append(objectsIn: breedsResponse.message[breed] ?? [])
+                            try realm.write {
+                                realm.add(breedObj)
+                            }
+                        }
+                        self?.constructDataSource()
                         self?.delegate?.dataLoaded()
                     } catch let error {
                         print(error)
@@ -41,8 +53,12 @@ class BreedListViewModel {
         }
     }
 
-    func constructDataSource(response: [String: [String]]) {
-        self.breedList = response.keys.sorted()
-        self.breedMap = response
+    func constructDataSource() {
+        do {
+            let realm = try Realm()
+            self.breedList = realm.objects(Breed.self).sorted(byKeyPath: "name").map({$0})
+        } catch let error {
+            print(error)
+        }
     }
 }
